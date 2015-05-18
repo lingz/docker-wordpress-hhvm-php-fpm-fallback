@@ -35,6 +35,9 @@ ADD nginx.sh /etc/service/nginx/run
 RUN mkdir /etc/service/hhvm
 ADD hhvm.sh /etc/service/hhvm/run
 
+RUN mkdir /etc/service/php5-fpm
+ADD php5-fpm.sh /etc/service/php5-fpm/run
+
 RUN sudo /usr/share/hhvm/install_fastcgi.sh
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
