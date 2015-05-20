@@ -1,6 +1,5 @@
 Docker Container running Wordpress + HHVM + Nginx with PHP-FPM fallback
 
-This does not come with mysql installation.
 
 ##How to use
 
@@ -25,6 +24,11 @@ solution or the following docker image works also:
 
 https://github.com/tutumcloud/tutum-docker-mysql
 
+##Notes
+
+- PHP 5.6
+- Does not come with mysql.
+- Environment variables are enabled in PHP-FPM (to be consistent with HHVM)
 
 ##References
 
