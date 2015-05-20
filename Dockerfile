@@ -23,6 +23,11 @@ RUN apt-get update && apt-get install -y hhvm
 # nginx site conf
 ADD ./nginx-site.conf /etc/nginx/sites-available/default
 
+# Install Wordpress
+ADD WordPress/ /usr/share/nginx/www
+ADD wp-config.php /usr/share/nginx/www/wp-config.php
+RUN chown -R www-data:www-data /usr/share/nginx/www
+
 # Start the services
 RUN mkdir /etc/service/nginx
 ADD nginx.sh /etc/service/nginx/run

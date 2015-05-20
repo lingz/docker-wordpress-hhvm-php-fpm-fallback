@@ -1,6 +1,4 @@
-Docker container that runs the HHVM vm, along with a php-fpm fallback, with nginx as the server
-
-This has no php files in it, so you need to load the relevant php code into `/usr/share/nginx/www/`
+Docker Container running Wordpress + HHVM + Nginx with PHP-FPM fallback
 
 ##How to use
 
@@ -13,16 +11,12 @@ To boot this into an interactive shell you can use
     ./interactive.sh
 
 
-## With Wordpress
-
-A variant of this repo exists with Wordpress packaged in it, you can find it at the following link:
-
-https://github.com/lingz/docker-wordpress-hhvm-php-fpm-fallback
-
 ##References
 
 Based on:
 https://github.com/philipz/docker-nginx-hhvm-wordpress
+
+##References
 
 1. https://github.com/CenturyLinkLabs/ctlc-docker-wordpress
 2. https://github.com/nikolaplejic/docker.hhvm
