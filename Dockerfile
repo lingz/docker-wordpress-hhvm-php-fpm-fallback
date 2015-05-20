@@ -34,7 +34,6 @@ ADD ./nginx-site.conf /etc/nginx/sites-available/default
 
 # Install Wordpress
 ADD WordPress/ /usr/share/nginx/www
-ADD WP-API /usr/share/nginx/www/wp-content/plugins/WP-API
 ADD wp-config.php /usr/share/nginx/www/wp-config.php
 RUN chown -R www-data:www-data /usr/share/nginx/www
 
@@ -42,8 +41,8 @@ RUN chown -R www-data:www-data /usr/share/nginx/www
 RUN mkdir /etc/service/nginx
 ADD nginx.sh /etc/service/nginx/run
 
-#RUN mkdir /etc/service/hhvm
-#ADD hhvm.sh /etc/service/hhvm/run
+RUN mkdir /etc/service/hhvm
+ADD hhvm.sh /etc/service/hhvm/run
 
 RUN mkdir /etc/service/php5-fpm
 ADD php5-fpm.sh /etc/service/php5-fpm/run
