@@ -4,7 +4,11 @@ This does not come with mysql installation.
 
 ##How to use
 
-First build the container
+First make sure wordpress is loaded.
+
+    git submodule init && git submodule update
+
+Then build the container
 
     ./build.sh
 
