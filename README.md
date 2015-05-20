@@ -1,5 +1,7 @@
 Docker Container running Wordpress + HHVM + Nginx with PHP-FPM fallback
 
+This does not come with mysql installation.
+
 ##How to use
 
 First build the container
@@ -8,11 +10,16 @@ First build the container
 
 To start the server just use
 
-    ./start.sh
+    PORT=80 DB_HOST="my_wp_host" DB_NAME=wp_test DB_USER=wp_user DB_PASSWORD=wp_pass ./start.sh 
 
 To boot this into an interactive shell you can use
 
-    ./interactive.sh
+    PORT=80 DB_HOST="my_wp_host" DB_NAME=wp_test DB_USER=wp_user DB_PASSWORD=wp_pass ./interactive.sh
+
+As this container does not contain mysql, you need to set one up separately. You can use a hosted
+solution or the following docker image works also:
+
+https://github.com/tutumcloud/tutum-docker-mysql
 
 
 ##References
