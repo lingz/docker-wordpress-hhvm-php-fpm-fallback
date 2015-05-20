@@ -36,7 +36,7 @@ define('DB_PASSWORD', getenv("DB_PASSWORD"));
 if( strlen(getenv("DB_HOST")) > 0 ) {
   define('DB_HOST', getenv("DB_HOST"));
 } else {
-  define('DB_HOST', (getenv("DB_1_PORT_3306_TCP_ADDR") . ":" . getenv("DB_1_PORT_3306_TCP_PORT")));
+  define('DB_HOST', 'localhost');
 }
 
 /** Database Charset to use in creating database tables. */

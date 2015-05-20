@@ -48,4 +48,8 @@ RUN sed -i -e"s/9000/8000/" /etc/hhvm/server.ini /etc/nginx/hhvm.conf
 # private expose
 EXPOSE 80
 
-CMD ["/sbin/my_init -- bash -l"]
+# Start the custom run script (fixes hanging bug)
+ADD ./my_init /my_init
+RUN chmod 755 /my_init
+
+CMD ["/my_init"]

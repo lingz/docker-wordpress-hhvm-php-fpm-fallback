@@ -2,6 +2,10 @@ Docker Container running Wordpress + HHVM + Nginx with PHP-FPM fallback
 
 ##How to use
 
+First build the container
+
+    ./build.sh
+
 To start the server just use
 
     ./start.sh

@@ -1,16 +1,19 @@
 #!/bin/bash
 
-PORT=${PORT:-3000}
+PORT=${PORT:-3000} # port that wordpress will run on
+DB_HOST=${DB_HOST:-localhost}
+DB_NAME=${DB_NAME:-wordpress}
+DB_USER=${DB_USER:-admin}
+DB_PASSWORD=${DB_USER:-password}
 
-if [ $# -eq 0 ]
-  then
-    echo "First argument must be directory of theme"
-    exit
-fi
+echo $HOST
 
-THEME_NAME="$(basename $1)"
+#echo "Creating interactive container for wordpress-hhvm-php-fpm-fallback"
+#echo "PORT: $PORT"
 
-echo "Creating temporary container for theme name: $THEME_NAME"
-echo "PORT: $PORT"
-
-docker run -i -t --rm -p 80:$PORT --name $THEME_NAME -v $1:/usr/share/nginx/www/wp-content/themes/$THEME_NAME docker-wordpress-nginx
+docker run -i -t --rm -p $PORT:80 --name "wordpress-hhvm-php-fpm-fallback" \
+  -e "DB_HOST=$DB_HOST" \
+  -e "DB_NAME=$DB_NAME" \
+  -e "DB_USER=$DB_USER" \
+  -e "DB_PASSWORD=$DB_PASSWORD" \
+  docker-wordpress-hhvm-php-fpm-fallback
