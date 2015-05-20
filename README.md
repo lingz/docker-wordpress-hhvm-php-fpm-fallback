@@ -19,7 +19,10 @@ A variant of this repo exists with Wordpress packaged in it, you can find it at 
 
 https://github.com/lingz/docker-wordpress-hhvm-php-fpm-fallback
 
-##Reference
+##References
+
+Based on:
+https://github.com/philipz/docker-nginx-hhvm-wordpress
 
 1. https://github.com/CenturyLinkLabs/ctlc-docker-wordpress
 2. https://github.com/nikolaplejic/docker.hhvm
