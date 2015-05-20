@@ -1,7 +1,24 @@
-Docker Container running Wordpress + HHVM + Nginx with PHP-FPM fallback
+Docker container that runs the HHVM vm, along with a php-fpm fallback, with nginx as the server
 
-docker-nginx-hhvm-wordpress [![Docker repo](http://img.shields.io/badge/docker-repo-blue.svg)](https://registry.hub.docker.com/u/philipz/nginx-hhvm-wordpress/)
-===========================
+This has no php files in it, so you need to load the relevant php code into `/usr/share/nginx/www/`
+
+##How to use
+
+To start the server just use
+
+    ./start.sh
+
+To boot this into an interactive shell you can use
+
+    ./interactive.sh
+
+
+## With Wordpress
+
+A variant of this repo exists with Wordpress packaged in it, you can find it at the following link:
+
+https://github.com/lingz/docker-wordpress-hhvm-php-fpm-fallback
+
 ##Reference
 
 1. https://github.com/CenturyLinkLabs/ctlc-docker-wordpress
@@ -12,8 +29,3 @@ docker-nginx-hhvm-wordpress [![Docker repo](http://img.shields.io/badge/docker-r
 6. https://rtcamp.com/tutorials/php/hhvm-with-fpm-fallback/
 7. https://bjornjohansen.no/hhvm-with-fallback-to-php
 8. https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-ubuntu-12-04:w
-
-##How to use
-
-    docker run -d --name db_1 -e "MYSQL_DATABASE=wordpress" -e "MYSQL_ROOT_PASSWORD=coscup_z>b" -p 3306:3306 ctlc/mysql
-    docker run -d --name web_1 --link db_1:db_1 -e "DB_USER=root" -e "DB_PASSWORD=coscup_z>b" -p :80 philipz/nginx-hhvm-wordpress
